@@ -1,6 +1,7 @@
 #ifndef TENSOR_H
 #define TENSOR_H
-#include <assert.h>
+#include <algorithm>
+#include <cassert>
 #include <immintrin.h>
 #include <iostream>
 #include <math.h>
@@ -18,7 +19,7 @@ public:
   friend std::ostream &operator<<(std::ostream &out, const Tensor &val);
 
 private:
-  std::vector<float> data;
+  float *data;
   int m;
   int n;
   bool requires_grad = true;
